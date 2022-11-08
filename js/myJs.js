@@ -1,16 +1,16 @@
 const textConfig = {
-  text1: "He luu cậu!",
+  text1: "Hê sờ lô hơ sờ ly ly!",
   text2: "Tớ có điều này muốn hỏi cậu nhớ phải trả lời thật lòng nhaaa.",
-  text3: "Cậu yêu tớ có phải không nào ._.",
+  text3: "Cậu yêu tớ có phải không nào ^_^",
   text4: "Nếu cậu ko trả lời mà thoát ra tức là muốn làm vợ tớ rùi đó nha :v",
   text5: "Cậu mơ à???",
   text6: "Yêu ơi là yêu <3",
-  text7: "lí do cậu thích tớ đi :vvvv",
+  text7: "Lý do cậu thích tớ là gìiiii <3",
   text8: "Gửi cho tớ <3",
-  text9: "Vì cậu đẹp try vlllll",
-  text10: "Tớ biết mà ^^ Yêu cậu 300.000",
+  text9: "Vì tớ iu cậu thoai",
+  text10: "Tớ biết mà ^^ Yêu cậu 3000",
   text11:
-    "Tối nay tớ qua đón cậu đi chơi nhaa :v Còn giờ thì chờ gì nữa mà ko inbox cho tớ đi nàooo",
+    "Giờ thì chờ gì nữa mà ko inbox cho tớ đi nàooo",
   text12: "Okii lunn <3",
 };
 
@@ -88,12 +88,12 @@ $(document).ready(function () {
   // generate text in input
   function textGenerate() {
     var n = "";
-    var text = " " + textConfig.text9;
+    var text = textConfig.text9;
     var a = Array.from(text);
     var textVal = $("#txtReason").val() ? $("#txtReason").val() : "";
     var count = textVal.length;
     if (count > 0) {
-      for (let i = 1; i <= count; i++) {
+      for (let i = 0; i < (count < text.length ? count : text.length); i++) {
         n = n + a[i];
         if (i == text.length + 1) {
           $("#txtReason").val("");
@@ -130,6 +130,7 @@ $(document).ready(function () {
       confirmButtonText: textConfig.text8,
     }).then((result) => {
       if (result.value) {
+        $("#txtReason").focus();
         Swal.fire({
           width: 900,
           confirmButtonText: textConfig.text12,
@@ -138,7 +139,7 @@ $(document).ready(function () {
           text: textConfig.text11,
           confirmButtonColor: "#83d0c9",
           onClose: () => {
-            window.location = "http://fb.com";
+            window.location = "https://www.facebook.com/minhvu.tx";
           },
         });
       }
